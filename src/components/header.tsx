@@ -38,7 +38,7 @@ export function Header() {
           <div className="flex items-center justify-center">
             <Link href="/" className="text-center">
               <span
-                className="text-2xl lg:text-3xl tracking-[0.15em] font-light text-white"
+                className="text-lg lg:text-3xl tracking-[0.15em] whitespace-nowrap font-light text-white"
                 style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}
               >
                 KATHY D.
@@ -80,7 +80,7 @@ export function Header() {
               </span>
             </button>
             <span
-              className="text-2xl lg:text-3xl tracking-[0.15em] font-light text-white"
+              className="text-lg lg:text-3xl tracking-[0.15em] whitespace-nowrap font-light text-white"
               style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}
             >
               KATHY D.
