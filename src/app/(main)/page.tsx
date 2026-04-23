@@ -64,7 +64,7 @@ export default function Home() {
             ].map((item, i) => (
               <Link key={i} href={item.href} className="group relative aspect-[3/4] bg-[#f5f3ef] overflow-hidden">
                 {item.img ? (
-                  <img src={item.img} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                  <img src={item.img} alt={item.title} className="w-full h-full object-cover" />
                 ) : (
                   <div className="absolute inset-0 flex items-center justify-center text-[#d0ccc5] text-sm">{item.title}</div>
                 )}
