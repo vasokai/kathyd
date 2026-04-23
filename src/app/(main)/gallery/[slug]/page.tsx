@@ -5,8 +5,42 @@ import { db } from "@/lib/db";
 import { paintings } from "@/lib/db/schema";
 import { eq } from "drizzle-orm";
 import { fmtPrice } from "@/lib/utils";
+import type { Metadata } from "next";
 
 export const dynamic = "force-dynamic";
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  let painting: typeof paintings.$inferSelect | null = null;
+  try {
+    const [row] = await db.select().from(paintings).where(eq(paintings.slug, slug)).limit(1);
+    painting = row ?? null;
+  } catch {}
+
+  if (!painting && slug === "peacock-among-magnolias") {
+    return {
+      title: "Peacock Among Magnolias — KathyD Fine Art",
+      description: "Original oil painting by KathyD. A majestic peacock among blooming magnolia branches in ornate baroque gold frame.",
+      openGraph: {
+        title: "Peacock Among Magnolias — KathyD Fine Art",
+        description: "Original oil painting by KathyD. Available for purchase.",
+        images: [{ url: "https://kathydobrev.com/paintings/kathyd-peacock-magnolia-front-view.webp", width: 928, height: 1152 }],
+      },
+    };
+  }
+
+  if (!painting) return { title: "Painting — KathyD Fine Art" };
+
+  return {
+    title: `${painting.title} — KathyD Fine Art`,
+    description: painting.description || `Original painting by KathyD. ${painting.medium || ""}`,
+    openGraph: {
+      title: `${painting.title} — KathyD Fine Art`,
+      description: painting.description || `Original painting by KathyD.`,
+      images: painting.thumbnail ? [{ url: `https://kathydobrev.com${painting.thumbnail}` }] : [],
+    },
+  };
+}
 
 const demoPainting = {
   id: "demo",
