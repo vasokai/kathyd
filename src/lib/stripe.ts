@@ -1,0 +1,13 @@
+import Stripe from "stripe";
+
+let _stripe: Stripe | null = null;
+
+export function stripe() {
+  if (!_stripe) _stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
+  return _stripe;
+}
+
+export function appUrl(path = "") {
+  const base = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000";
+  return `${base}${path}`;
+}
