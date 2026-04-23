@@ -17,6 +17,17 @@ const cormorant = Cormorant_Garamond({
 export const metadata: Metadata = {
   title: "KathyD — Fine Art",
   description: "Original paintings by KathyD. Collect unique fine art — buy now or bid at auction.",
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
+  openGraph: {
+    title: "KathyD — Fine Art",
+    description: "Original paintings by KathyD. Collect unique fine art — buy now or bid at auction.",
+    url: "https://kathydobrev.com",
+    siteName: "KathyD Fine Art",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
