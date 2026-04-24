@@ -82,21 +82,40 @@ export default function Home() {
 
       {/* Artist Statement */}
       <section className="py-24 lg:py-32 bg-[#f5f3ef]">
-        <div className="max-w-3xl mx-auto px-6 text-center">
-          <p className="text-[11px] tracking-[0.3em] uppercase text-[#C9A96E] font-medium mb-8">The Artist</p>
-          <p
-            className="text-2xl md:text-3xl font-light leading-relaxed text-[#3a3a3a]"
-            style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}
-          >
-            &ldquo;Every brushstroke carries intention. Every painting tells a story that words cannot.&rdquo;
-          </p>
-          <p className="text-[#7a7a7a] mt-8 text-sm">— KathyD</p>
-          <Link
-            href="/about"
-            className="inline-flex items-center gap-2 mt-12 text-[13px] tracking-[0.1em] uppercase text-[#0a0a0a] border-b border-[#0a0a0a] pb-1 hover:border-[#C9A96E] hover:text-[#C9A96E] transition-colors"
-          >
-            About the Artist <ArrowRight className="w-3.5 h-3.5" />
-          </Link>
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <div className="aspect-[4/5] overflow-hidden">
+              <img
+                src="/kathyd-artist-studio.webp"
+                alt="KathyD — Fine art painter in her studio"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div>
+              <p className="text-[11px] tracking-[0.3em] uppercase text-[#C9A96E] font-medium mb-6">The Artist</p>
+              <h2
+                className="text-3xl md:text-4xl font-light tracking-tight leading-tight mb-8"
+                style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}
+              >
+                Kathy Dobrev
+              </h2>
+              <p
+                className="text-xl md:text-2xl font-light leading-relaxed text-[#3a3a3a] mb-8"
+                style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif" }}
+              >
+                &ldquo;Every brushstroke carries intention. Every painting tells a story that words cannot.&rdquo;
+              </p>
+              <p className="text-sm text-[#7a7a7a] leading-relaxed mb-10">
+                KathyD is a contemporary fine artist working primarily in oil on canvas. Her paintings explore the harmony between nature, color, and emotion — each piece a unique, hand-painted original for collectors worldwide.
+              </p>
+              <Link
+                href="/about"
+                className="inline-flex items-center gap-2 text-[13px] tracking-[0.1em] uppercase text-[#0a0a0a] border-b border-[#0a0a0a] pb-1 hover:border-[#C9A96E] hover:text-[#C9A96E] transition-colors"
+              >
+                About the Artist <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 
